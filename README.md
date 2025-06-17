@@ -84,18 +84,28 @@ It should now read like this:
 
 It should put your computer to sleep after seeding now.
 
-## Optional - If You Want Your Computer to Wake From Sleep <br>
+## Optional - If You Want Your Computer to Wake From Sleep
 
--The task is already setup to wake up your computer from sleep, but you must be logged into your computer with your user account running the bot when you put it to sleep. <br>
--There is unfortunately no way to make the task login after a restart. This is a security decision made by Microsoft.<br>
--If you computer is not waking from sleep after you are logged in and put it to sleep make sure the Windows settings below are set. <br>
--You need to go to "Control Panel" then "Hardware and Sound" then "Power Options" then "Edit Power Plan". <br>
--On the power plan page click "Change advanced power settings". <br>
--Make sure that the setting under "Sleep", "Allow wake timers" is set to "Enable" on all plans from the drop down shown as "Balanced [Active]" in the screenshot. 
+The task is already setup to wake up your computer from sleep, but you must be logged into your computer with your user account running the bot when you put it to sleep.
+
+There is unfortunately no way to make the task login after a restart. This is a security decision made by Microsoft.
+
+If you computer is not waking from sleep after you are logged in and put it to sleep make sure the Windows settings below are set.
+
+You need to go to "Control Panel" then "Hardware and Sound" then "Power Options" then "Edit Power Plan".
+
+On the power plan page click "Change advanced power settings".
+
+Make sure that the setting under "Sleep", "Allow wake timers" is set to "Enable" on all plans from the drop down shown as "Balanced [Active]" in the screenshot. 
+
 ![Power Plan](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Power%20Plan%20Settings.png) <br>
-<br>
--Next Open "Settings" <br>
--Go to "Accounts" on the left window. <br>
--In the main right window go to "Sign-In options" with the key icon <br>
--Scroll to "Additional Settings" Make sure "If you've been away, when should Windows require you to sign in again?" Is set to "Never" as shown below.<br>
+
+Next Open "Settings"
+
+Go to "Accounts" on the left window.
+
+In the main right window go to "Sign-In options" with the key icon
+
+Scroll to "Additional Settings" Make sure "If you've been away, when should Windows require you to sign in again?" Is set to "Never" as shown below.<br>
+
 ![Account Settings](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Account%20Setting.png)
