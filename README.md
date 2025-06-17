@@ -1,6 +1,6 @@
 # Before Installing
 
--This seed script supports the Steam and Epic Games versions of Hell Let Loose.
+This seed script supports the Steam and Epic Games versions of Hell Let Loose.
 
 -Verify that you have one of these supported monitor resolutions listed below for the script to work:
   - 1920 x 1080
