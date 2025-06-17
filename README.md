@@ -9,27 +9,30 @@
   - 5120 x 2160
 - If you do not have one of these resolutions, this error box will apear when the script runs.
   
-![first](GameResolution
+![first](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Game%20Resolution%20Error.png)
 
-- 1. Delete all Intro Movies from your game folders. The movies are in  "*YourSteamInstallPath*\\steamapps\common\Hell Let Loose\HLL\Content\Movies"
+- 1. Delete all Intro Movies from your game folders.
+> Steam Intro Movies Location: "*YourSteamInstallPath*\\steamapps\common\Hell Let Loose\HLL\Content\Movies"
+> Epic Games Intro Movies Location: "Program Files\Epic Games\HellLetLooseG0WU4\HLL\Content\Movies"
  
-- Download the latest release from the [releases]( page.
+- 2. Make sure you downloaded the latest release from the [releases]( page.
 - Extract the zip file
 - Double click on `enable.bat` to run
-- Click the `More info` button on defender pop up
+- Click the `More info` button on the Windows Defender pop up highlighted in red.
 > Why are you seeing this pop up? Because I am not paying microsoft for a certificate to run this script. If you have concerns about the code you can check all of the exe files in notepad++. The exe files have the instructions they execute at the bottom of the file. 
 
-![second](Windows1
+![second](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Windows%20Security%2001.png)
 
-- Click `Run anyway`
+- Click `Run anyway` highlighted in red.
 
-![third](Windows2
+![third](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Windows%20Security%2002.png)
 
 - Go to "C:\users\\*youruserprofile*\hll-seq-seed"
+
 - Repeat these same steps for `script.bat`
 - At this point you should be able to open up your Windows Task Scheduler and see the newly created task `SYN seed`
 - You can find your Windows Task Scheduler by hitting the windows key and typing "Task" then clicking on the "Task Schduler"
-![task](SynTask
+![task](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Syn%20Task.png)
   
 - Even if you start late you will still be helping out! The task skips over already seeded servers so dont be afraid to start it manualy whenever you can if thats what you want to do.
 - You can manually launch the bot by going to the instal directory "C:\users\\*youruserprofile*\hll-seq-seed" and launching script.bat
@@ -61,10 +64,10 @@ It should now read like
 -You need to go to "Control Panel" then "Hardware and Sound" then "Power Options" then "Edit Power Plan". <br>
 -On the power plan page click "Change advanced power settings". <br>
 -Make sure that the circled setting is set to "Enable" on all plans from the drop down shown as "Balanced [Active]" in the screenshot. 
-![Power Plan](Power Plan <br>
+![Power Plan](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Power%20Plan%20Settings.png) <br>
 <br>
 -Next Open "Settings" <br>
 -Go to "Accounts" on the left window. <br>
 -In the main right window go to "Sign-In options" with the key icon <br>
 -Scroll to "Additional Settings" Make sure "If you've been away, when should Windows require you to sign in again?" Is set to "Never" as below. 
-![Account Settings](Account Settings
+![Account Settings](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Account%20Setting.png)
