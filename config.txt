@@ -1,0 +1,12 @@
+INSTALL_DIR=hll-seq-seed
+
+JQ_URL=https://github.com/stedolan/jq/releases/latest/download/jq-win64.exe
+JQ_INSTALL_PATH=%USERPROFILE%\hll-seq-seed\jq
+JQ_PATH=%USERPROFILE%\hll-seq-seed\jq\jq.exe
+
+SEEDED_THRESHOLD=75
+
+RCON_URLSYN=https://stats.syn.team/api/get_public_info
+RCON_URLCTRL=http://45.59.162.147:8010/api/get_public_info
+
+LAUNCHER=steam
