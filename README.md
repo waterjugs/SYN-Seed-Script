@@ -1,6 +1,6 @@
 # Install
 
-- Verify that you have one of the resolutions listed below for the script to work:
+- Verify that you have one of these monitor resolutions listed below for the script to work:
   - 1920 x 1080
   - 2560 x 1440
   - 3840 x 2160
