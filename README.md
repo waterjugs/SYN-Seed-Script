@@ -10,7 +10,7 @@ Verify that you have one of these supported monitor resolutions listed below for
   - 3440 x 1440
   - 5120 x 2160
 
-If you do not have one of these supported resolutions, this error box will apear when the script runs.
+If you do not have one of these supported resolutions, this error box will apear and the script will not work correctly.
   
 ![first](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Game%20Resolution%20Error.png)
 
