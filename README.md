@@ -46,7 +46,7 @@
 - Go to the end of the file
 - Delete the letters "REM" and the space.
 
-It should now read like 
+- It should now read like:
 
 
 > echo Putting the PC to sleep... <br>
