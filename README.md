@@ -1,22 +1,22 @@
 # Install Guide
 
-- Verify that you have one of these monitor resolutions listed below for the script to work:
+-Verify that you have one of these monitor resolutions listed below for the script to work:
   - 1920 x 1080
   - 2560 x 1440
   - 3840 x 2160
   - 2560 x 1080
   - 3440 x 1440
   - 5120 x 2160
-- If you do not have one of these resolutions, this error box will apear when the script runs.
+-If you do not have one of these resolutions, this error box will apear when the script runs.
   
 ![first](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Game%20Resolution%20Error.png)
 
-# Delete all Intro Movies from your game folders.
+# 1. Delete all Intro Movies from your game folders.
 > Steam Intro Movies Location: > "*YourSteamInstallPath*\\steamapps\common\Hell Let Loose\HLL\Content\Movies"
 
 > Epic Games Intro Movies Location: > "Program Files\Epic Games\HellLetLooseG0WU4\HLL\Content\Movies"
  
-#Make sure you downloaded the latest release from the [releases](https://github.com/waterjugs/SYN-Seed-Script/releases) page.
+Make sure you downloaded the latest release from the [releases](https://github.com/waterjugs/SYN-Seed-Script/releases) page.
 - Extract the zip file
 - Double click on `enable.bat` to run
 - Click the `More info` button on the Windows Defender pop up highlighted in red.
