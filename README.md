@@ -11,7 +11,7 @@
   
 ![first](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Game%20Resolution%20Error.png)
 
-- Delete all Intro Movies from your game folders.
+1.Delete all Intro Movies from your game folders.
 - Steam Intro Movies Location: > "*YourSteamInstallPath*\\steamapps\common\Hell Let Loose\HLL\Content\Movies"
 
 - Epic Games Intro Movies Location: > "Program Files\Epic Games\HellLetLooseG0WU4\HLL\Content\Movies"
@@ -30,7 +30,7 @@
 
 - Go to "C:\users\\*youruserprofile*\hll-seq-seed"
 
-- Repeat these same steps for `script.bat`
+2.Repeat these same steps for `script.bat`
 - At this point you should be able to open up your Windows Task Scheduler and see the newly created task `SYN seed`
 - You can find your Windows Task Scheduler by hitting the windows key and typing "Task" then clicking on the "Task Schduler"
 ![task](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Syn%20Task.png)
