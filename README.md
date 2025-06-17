@@ -25,23 +25,23 @@ If you are using the _Epic Games_ version of Hell Let Loose
 ## Step Two: Download The Latest Release
 Download the latest seed script from the [releases](https://github.com/waterjugs/SYN-Seed-Script/releases) page.
 
-Extract the zip file
+-Extract the zip file
 
-Double click on `enable.bat` to run
+-Double click on `enable.bat` to run
 
-Click the `More info` button on the Windows Defender pop up highlighted in red.
+-Click the `More info` button on the Windows Defender pop up highlighted in red.
 
 > Why are you seeing this pop up? Because I am not paying microsoft for a certificate to run this script. If you have concerns about the code, you can check all of the code in the seeder.exe files in notepad++. The seeder.exe file has the instructions it executes at the bottom of the file.<br>
 
 ![second](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Windows%20Security%2001.png)
 
-Click `Run anyway` highlighted in red.
+-Click `Run anyway` highlighted in red.
 
 ![third](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Windows%20Security%2002.png)
 
-Go to "C:\users\\*youruserprofile*\hll-seq-seed"
+-Go to "C:\users\\*youruserprofile*\hll-seq-seed"
 
-**Repeat these same steps for `script.bat`**
+**Repeat these same steps above for the `script.bat` file**
 
 At this point you should be able to open up your Windows Task Scheduler and see the newly created task `SYN seed`
 
