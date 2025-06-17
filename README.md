@@ -16,10 +16,10 @@ If you do not have one of these supported resolutions, this error box will apear
 
 ## Step One: Delete All Intro Movies From Your Respective Game Folder.
 
-If you are using the _Steam_ version of Hell Let Loose
+-If you are using the _Steam_ version of Hell Let Loose
 > Steam Intro Movies Location: "*YourSteamInstallPath*\\steamapps\common\Hell Let Loose\HLL\Content\Movies"
 
-If you are using the _Epic Games_ version of Hell Let Loose
+-If you are using the _Epic Games_ version of Hell Let Loose
 > Epic Games Intro Movies Location: "Program Files\Epic Games\HellLetLooseG0WU4\HLL\Content\Movies"
  
 ## Step Two: Download The Latest Release
@@ -67,21 +67,21 @@ If you are intending on using the _Epic Games_ version of Hell Let Loose, follow
 
 -Change the option "LAUNCHER=" from `steam` to `epic`
 
-Save the file, it should now look like this:
+-Save the file, it should now look like this:
 
 ![epic](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Config%20File%20Epic.png)
 
 ## Optional - Put Your Computer to Sleep After Seeding
 
-Go to the install directory should be "C:\users\\*youruserprofile*\hll-seq-seed"
+-Go to the install directory should be "C:\users\\*youruserprofile*\hll-seq-seed"
 
-Find the script.bat file.
+-Find the script.bat file.
 
-Right Click the file and select "edit in Notepad"
+-Right Click the file and select "edit in Notepad"
 
-Go to the end of the file
+-Go to the end of the file
 
-Delete the letters "REM" and the space.
+-Delete the letters "REM" and the space.
 
 It should now read like this:
 
@@ -100,20 +100,20 @@ There is unfortunately no way to make the task login after a restart. This is a 
 
 If you computer is not waking from sleep after you are logged in and put it to sleep make sure the Windows settings below are set.
 
-You need to go to "Control Panel" then "Hardware and Sound" then "Power Options" then "Edit Power Plan".
+-You need to go to "Control Panel" then "Hardware and Sound" then "Power Options" then "Edit Power Plan".
 
-On the power plan page click "Change advanced power settings".
+-On the power plan page click "Change advanced power settings".
 
-Make sure that the setting under "Sleep", "Allow wake timers" is set to "Enable" on all plans from the drop down shown as "Balanced [Active]" in the screenshot. 
+-Make sure that the setting under "Sleep", "Allow wake timers" is set to "Enable" on all plans from the drop down shown as "Balanced [Active]" in the screenshot. 
 
 ![Power Plan](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Power%20Plan%20Settings.png) <br>
 
-Next Open "Settings"
+-Next Open "Settings"
 
-Go to "Accounts" on the left window.
+-Go to "Accounts" on the left window.
 
-In the main right window go to "Sign-In options" with the key icon
+-In the main right window go to "Sign-In options" with the key icon
 
-Scroll to "Additional Settings" Make sure "If you've been away, when should Windows require you to sign in again?" Is set to "Never" as shown below.<br>
+-Scroll to "Additional Settings" Make sure "If you've been away, when should Windows require you to sign in again?" Is set to "Never" as shown below.<br>
 
 ![Account Settings](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Account%20Setting.png)
