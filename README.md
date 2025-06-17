@@ -64,7 +64,7 @@
 -If you computer is not waking from sleep after you are logged in and put it to sleep make sure the Windows settings below are set. <br>
 -You need to go to "Control Panel" then "Hardware and Sound" then "Power Options" then "Edit Power Plan". <br>
 -On the power plan page click "Change advanced power settings". <br>
--Make sure that the circled setting is set to "Enable" on all plans from the drop down shown as "Balanced [Active]" in the screenshot. 
+-Make sure that the setting under "Sleep", "Allow wake timers" is set to "Enable" on all plans from the drop down shown as "Balanced [Active]" in the screenshot. 
 ![Power Plan](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Power%20Plan%20Settings.png) <br>
 <br>
 -Next Open "Settings" <br>
