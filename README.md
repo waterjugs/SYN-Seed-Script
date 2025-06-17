@@ -51,7 +51,7 @@ You can find your Windows Task Scheduler by hitting the windows key and typing "
   
 Even if you start late you will still be helping out! The task skips over already seeded servers so dont be afraid to start it manualy whenever you can if thats what you want to do.
 
-You can manually launch the bot by going to the instal directory "C:\users\\*youruserprofile*\hll-seq-seed" and launching script.bat
+You can manually launch the bot by going to the install directory "C:\users\\*youruserprofile*\hll-seq-seed" and launching script.bat
 
 ## Ensure The Script Is Using The Correct Version of Hell Let Loose
 
@@ -63,11 +63,11 @@ Open `config.txt`
 
 Change the option "LAUNCHER=" to `steam` or `epic` depending on which version of Hell Let Loose you are using.
 
-> **If you are using the _Steam_ versison of Hell Let Loose it should look like this:** <br>
+> If you are using the _Steam_ versison of Hell Let Loose it should look like this:<br>
 
 ![steam](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Config%20File%20Steam.png)
 
-> **If you are using the _Epic Games_ versison of Hell Let Loose it should look like this:**
+> If you are using the _Epic Games_ versison of Hell Let Loose it should look like this:<br>
 
 ![epic](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Config%20File%20Epic.png)
 
