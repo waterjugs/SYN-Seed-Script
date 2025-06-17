@@ -65,13 +65,17 @@ Change the option "LAUNCHER=" to `steam` or `epic` depending on which version of
 
 ## Optional - Put Your Computer to Sleep After Seeding
 
--Go to the install directory should be "C:\users\\*youruserprofile*\hll-seq-seed"
--Find the script.bat file.
--Right Click the file and select "edit in Notepad"
--Go to the end of the file
--Delete the letters "REM" and the space.
+Go to the install directory should be "C:\users\\*youruserprofile*\hll-seq-seed"
 
--It should now read like this:
+Find the script.bat file.
+
+Right Click the file and select "edit in Notepad"
+
+Go to the end of the file
+
+Delete the letters "REM" and the space.
+
+It should now read like this:
 
 
 > echo Putting the PC to sleep... <br>
