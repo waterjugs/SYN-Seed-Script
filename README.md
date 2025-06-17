@@ -53,15 +53,23 @@ Even if you start late you will still be helping out! The task skips over alread
 
 You can manually launch the bot by going to the instal directory "C:\users\\*youruserprofile*\hll-seq-seed" and launching script.bat
 
-## Using The Correct Version of Hell Let Loose
+## Ensure The Script Is Using The Correct Version of Hell Let Loose
+
+This seeding script can work for both the Steam and Epic Games versions of Hell Let Loose.
 
 Go to "C:\users\\*youruserprofile*\hll-seq-seed"
 
 Open `config.txt`
 
-Change the option "LAUNCHER=" to `steam` or `epic` depending on which version of Hell Let Loose you are using. This by default is set to `steam`.
+Change the option "LAUNCHER=" to `steam` or `epic` depending on which version of Hell Let Loose you are using.
+
+**If you are using the _Steam_ versison of Hell Let Loose it should look like this** <br>
 
 ![steam](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Config%20File%20Steam.png)
+
+**If you are using the _Epic Games_ versison of Hell Let Loose it should look like this**
+
+![epic](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Config%20File%20Epic.png)
 
 ## Optional - Put Your Computer to Sleep After Seeding
 
