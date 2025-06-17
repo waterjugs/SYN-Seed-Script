@@ -1,6 +1,6 @@
 # Install Guide
 
--Verify that you have one of these monitor resolutions listed below for the script to work:
+-Verify that you have one of these supported monitor resolutions listed below for the script to work:
   - 1920 x 1080
   - 2560 x 1440
   - 3840 x 2160
@@ -8,7 +8,7 @@
   - 3440 x 1440
   - 5120 x 2160
 
--If you do not have one of these resolutions, this error box will apear when the script runs.
+-If you do not have one of these supported resolutions, this error box will apear when the script runs.
   
 ![first](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Game%20Resolution%20Error.png)
 
@@ -17,19 +17,20 @@
 
 > Epic Games Intro Movies Location: "Program Files\Epic Games\HellLetLooseG0WU4\HLL\Content\Movies"
  
-Make sure you downloaded the latest release from the [releases](https://github.com/waterjugs/SYN-Seed-Script/releases) page.
-- Extract the zip file
-- Double click on `enable.bat` to run
-- Click the `More info` button on the Windows Defender pop up highlighted in red.
+# 2. Download the latest release
+-Download the latest seed script from the [releases](https://github.com/waterjugs/SYN-Seed-Script/releases) page.
+-Extract the zip file
+-Double click on `enable.bat` to run
+-Click the `More info` button on the Windows Defender pop up highlighted in red.
 > Why are you seeing this pop up? Because I am not paying microsoft for a certificate to run this script. If you have concerns about the code you can check all of the exe files in notepad++. The exe files have the instructions they execute at the bottom of the file. 
 
 ![second](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Windows%20Security%2001.png)
 
-- Click `Run anyway` highlighted in red.
+-Click `Run anyway` highlighted in red.
 
 ![third](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Windows%20Security%2002.png)
 
-- Go to "C:\users\\*youruserprofile*\hll-seq-seed"
+-Go to "C:\users\\*youruserprofile*\hll-seq-seed"
 
 # Repeat these same steps for `script.bat`
 - At this point you should be able to open up your Windows Task Scheduler and see the newly created task `SYN seed`
