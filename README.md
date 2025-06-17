@@ -14,12 +14,12 @@ If you do not have one of these supported resolutions, this error box will apear
   
 ![first](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Game%20Resolution%20Error.png)
 
-## Delete all Intro Movies from your respective game folder.
+## Delete All Intro Movies From Your Respective Game Folder.
 
-If you are using the STEAM version of Hell Let Loose
+If you are using the _Steam_ version of Hell Let Loose
 > Steam Intro Movies Location: "*YourSteamInstallPath*\\steamapps\common\Hell Let Loose\HLL\Content\Movies"
 
-If you are using the EPIC GAMES version of Hell Let Loose
+If you are using the _Epic Games_ version of Hell Let Loose
 > Epic Games Intro Movies Location: "Program Files\Epic Games\HellLetLooseG0WU4\HLL\Content\Movies"
  
 ## Download the latest release
