@@ -16,6 +16,8 @@ If you do not have one of these supported resolutions, this error box will apear
 
 ## Step One: Delete All Intro Movies From Your Respective Game Folder.
 
+-This must be done to ensure the timings for the script work correctly.
+
 -If you are using the _Steam_ version of Hell Let Loose
 > Steam Intro Movies Location: "*YourSteamInstallPath*\\steamapps\common\Hell Let Loose\HLL\Content\Movies"
 
@@ -57,7 +59,7 @@ You can manually launch the bot by going to the install directory "C:\users\\*yo
 
 This seeding script work for both the Steam and Epic Games versions of Hell Let Loose. 
 
-**By default** this script it set to run for Steam.
+**By default** this script it set to run for the _Steam_ version of Hell Let Loose.
 
 If you are intending on using the _Epic Games_ version of Hell Let Loose, follow these steps below:
 
