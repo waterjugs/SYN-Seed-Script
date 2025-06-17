@@ -22,7 +22,7 @@ If you are using the _Steam_ version of Hell Let Loose
 If you are using the _Epic Games_ version of Hell Let Loose
 > Epic Games Intro Movies Location: "Program Files\Epic Games\HellLetLooseG0WU4\HLL\Content\Movies"
  
-## Download the latest release
+## Download The Latest Release
 Download the latest seed script from the [releases](https://github.com/waterjugs/SYN-Seed-Script/releases) page.
 
 Extract the zip file
@@ -63,11 +63,11 @@ Open `config.txt`
 
 Change the option "LAUNCHER=" to `steam` or `epic` depending on which version of Hell Let Loose you are using.
 
-**If you are using the _Steam_ versison of Hell Let Loose it should look like this** <br>
+> **If you are using the _Steam_ versison of Hell Let Loose it should look like this** <br>
 
 ![steam](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Config%20File%20Steam.png)
 
-**If you are using the _Epic Games_ versison of Hell Let Loose it should look like this**
+> **If you are using the _Epic Games_ versison of Hell Let Loose it should look like this**
 
 ![epic](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Config%20File%20Epic.png)
 
