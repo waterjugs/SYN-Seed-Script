@@ -12,9 +12,9 @@
 ![first](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Game%20Resolution%20Error.png)
 
 - Delete all Intro Movies from your game folders.
-> Steam Intro Movies Location: "*YourSteamInstallPath*\\steamapps\common\Hell Let Loose\HLL\Content\Movies"
+- Steam Intro Movies Location: > "*YourSteamInstallPath*\\steamapps\common\Hell Let Loose\HLL\Content\Movies"
 
-> Epic Games Intro Movies Location: "Program Files\Epic Games\HellLetLooseG0WU4\HLL\Content\Movies"
+- Epic Games Intro Movies Location: > "Program Files\Epic Games\HellLetLooseG0WU4\HLL\Content\Movies"
  
 - Make sure you downloaded the latest release from the [releases]( page.
 - Extract the zip file
