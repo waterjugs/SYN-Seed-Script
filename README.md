@@ -1,6 +1,6 @@
 # Before Installing
 
-This seed script supports the Steam and Epic Games versions of Hell Let Loose.
+This seed script supports the **_Steam_** and **_Epic Games_** versions of Hell Let Loose.
 
 Verify that you have one of these supported monitor resolutions listed below for the script to work:
   - 1920 x 1080
@@ -57,6 +57,8 @@ You can manually launch the bot by going to the instal directory "C:\users\\*you
 Go to "C:\users\\*youruserprofile*\hll-seq-seed"
 Open `config.txt`
 Change the option "LAUNCHER=" to `steam` or `epic` depending on which version of Hell Let Loose you are using.
+
+![
 
 ### Optional - Put Your Computer to Sleep After Seeding
 
