@@ -16,7 +16,7 @@
 
 - Epic Games Intro Movies Location: > "Program Files\Epic Games\HellLetLooseG0WU4\HLL\Content\Movies"
  
-- Make sure you downloaded the latest release from the [releases]( page.
+- Make sure you downloaded the latest release from the [releases](https://github.com/waterjugs/SYN-Seed-Script/releases) page.
 - Extract the zip file
 - Double click on `enable.bat` to run
 - Click the `More info` button on the Windows Defender pop up highlighted in red.
