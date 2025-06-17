@@ -31,7 +31,7 @@ Double click on `enable.bat` to run
 
 Click the `More info` button on the Windows Defender pop up highlighted in red.
 
-> Why are you seeing this pop up? Because I am not paying microsoft for a certificate to run this script. If you have concerns about the code you can check all of the exe files in notepad++. The exe files have the instructions they execute at the bottom of the file. 
+> Why are you seeing this pop up? Because I am not paying microsoft for a certificate to run this script. If you have concerns about the code, you can check all of the code in the seeder.exe files in notepad++. The seeder.exe file has the instructions it executes at the bottom of the file. 
 
 ![second](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Windows%20Security%2001.png)
 
