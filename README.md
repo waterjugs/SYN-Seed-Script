@@ -1,17 +1,17 @@
 # Install
 
-- Delete all Intro Movies from your game folders. The movies are in  "*YourSteamInstallPath*\\steamapps\common\Hell Let Loose\HLL\Content\Movies"
-
-- You must have one of the following monitor resolutions for the seeding script to work:
+- Verify that you have one of the resolutions listed below for the script to work:
   - 1920 x 1080
   - 2560 x 1440
   - 3840 x 2160
   - 2560 x 1080
   - 3440 x 1440
   - 5120 x 2160
-- If you do not have one of these resolutions you will have this error box appear.
+- If you do not have one of these resolutions, this error box will apear when the script runs.
   
 ![first](GameResolution
+
+- 1. Delete all Intro Movies from your game folders. The movies are in  "*YourSteamInstallPath*\\steamapps\common\Hell Let Loose\HLL\Content\Movies"
  
 - Download the latest release from the [releases]( page.
 - Extract the zip file
