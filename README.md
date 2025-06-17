@@ -11,11 +11,11 @@
   
 ![first](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Game%20Resolution%20Error.png)
 
-- 1. Delete all Intro Movies from your game folders.
+- Delete all Intro Movies from your game folders.
 > Steam Intro Movies Location: "*YourSteamInstallPath*\\steamapps\common\Hell Let Loose\HLL\Content\Movies"
 > Epic Games Intro Movies Location: "Program Files\Epic Games\HellLetLooseG0WU4\HLL\Content\Movies"
  
-- 2. Make sure you downloaded the latest release from the [releases]( page.
+- Make sure you downloaded the latest release from the [releases]( page.
 - Extract the zip file
 - Double click on `enable.bat` to run
 - Click the `More info` button on the Windows Defender pop up highlighted in red.
