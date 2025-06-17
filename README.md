@@ -56,12 +56,14 @@ You can manually launch the bot by going to the instal directory "C:\users\\*you
 ## Using The Correct Version of Hell Let Loose
 
 Go to "C:\users\\*youruserprofile*\hll-seq-seed"
+
 Open `config.txt`
+
 Change the option "LAUNCHER=" to `steam` or `epic` depending on which version of Hell Let Loose you are using.
 
 ![steam](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Config%20File%20Steam.png)
 
-### Optional - Put Your Computer to Sleep After Seeding
+## Optional - Put Your Computer to Sleep After Seeding
 
 -Go to the install directory should be "C:\users\\*youruserprofile*\hll-seq-seed"
 -Find the script.bat file.
@@ -80,7 +82,7 @@ Change the option "LAUNCHER=" to `steam` or `epic` depending on which version of
 
 -It should put your computer to sleep after seeding now.
 
-### Optional - If You Want Your Computer to Wake From Sleep <br>
+## Optional - If You Want Your Computer to Wake From Sleep <br>
 
 -The task is already setup to wake up your computer from sleep, but you must be logged into your computer with your user account running the bot when you put it to sleep. <br>
 -There is unfortunately no way to make the task login after a restart. This is a security decision made by Microsoft.<br>
