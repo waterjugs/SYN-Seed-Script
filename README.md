@@ -59,7 +59,7 @@ Go to "C:\users\\*youruserprofile*\hll-seq-seed"
 
 Open `config.txt`
 
-Change the option "LAUNCHER=" to `steam` or `epic` depending on which version of Hell Let Loose you are using.
+Change the option "LAUNCHER=" to `steam` or `epic` depending on which version of Hell Let Loose you are using. This by default is set to `steam`.
 
 ![steam](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Config%20File%20Steam.png)
 
@@ -77,14 +77,12 @@ Delete the letters "REM" and the space.
 
 It should now read like this:
 
-
 > echo Putting the PC to sleep... <br>
 > powercfg -h off <br>
 > rundll32.exe powrprof.dll,SetSuspendState 0,1,0 <br>
 > powercfg -h on <br>
 
-
--It should put your computer to sleep after seeding now.
+It should put your computer to sleep after seeding now.
 
 ## Optional - If You Want Your Computer to Wake From Sleep <br>
 
