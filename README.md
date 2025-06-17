@@ -12,9 +12,12 @@
   
 ![first](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Game%20Resolution%20Error.png)
 
-## Delete all Intro Movies from your game folders.
+## Delete all Intro Movies from your respective game folder.
+
+-If you are using the STEAM version of Hell Let Loose
 > Steam Intro Movies Location: "*YourSteamInstallPath*\\steamapps\common\Hell Let Loose\HLL\Content\Movies"
 
+-If you are using the EPIC GAMES version of Hell Let Loose
 > Epic Games Intro Movies Location: "Program Files\Epic Games\HellLetLooseG0WU4\HLL\Content\Movies"
  
 ## Download the latest release
@@ -79,5 +82,5 @@
 -Next Open "Settings" <br>
 -Go to "Accounts" on the left window. <br>
 -In the main right window go to "Sign-In options" with the key icon <br>
--Scroll to "Additional Settings" Make sure "If you've been away, when should Windows require you to sign in again?" Is set to "Never" as below. 
+-Scroll to "Additional Settings" Make sure "If you've been away, when should Windows require you to sign in again?" Is set to "Never" as shown below. 
 ![Account Settings](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Account%20Setting.png)
