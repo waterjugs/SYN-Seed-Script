@@ -99,5 +99,5 @@ It should now read like this:
 -Next Open "Settings" <br>
 -Go to "Accounts" on the left window. <br>
 -In the main right window go to "Sign-In options" with the key icon <br>
--Scroll to "Additional Settings" Make sure "If you've been away, when should Windows require you to sign in again?" Is set to "Never" as shown below. 
+-Scroll to "Additional Settings" Make sure "If you've been away, when should Windows require you to sign in again?" Is set to "Never" as shown below.<br>
 ![Account Settings](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Account%20Setting.png)
