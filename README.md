@@ -36,7 +36,7 @@
 
 -Go to "C:\users\\*youruserprofile*\hll-seq-seed"
 
-# Repeat these same steps for `script.bat`
+## Repeat these same steps for `script.bat`
 - At this point you should be able to open up your Windows Task Scheduler and see the newly created task `SYN seed`
 - You can find your Windows Task Scheduler by hitting the windows key and typing "Task" then clicking on the "Task Schduler"
 ![task](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Syn%20Task.png)
