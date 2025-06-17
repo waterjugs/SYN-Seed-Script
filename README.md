@@ -16,7 +16,7 @@ If you do not have one of these supported resolutions, this error box will apear
 
 ## Step One: Delete All Intro Movies From Your Respective Game Folder.
 
-This must be done to ensure the timings for the script work correctly.
+**This _must_ be done to ensure the timings for the script work correctly.**
 
 -If you are using the _Steam_ version of Hell Let Loose
 > Steam Intro Movies Location: "*YourSteamInstallPath*\\steamapps\common\Hell Let Loose\HLL\Content\Movies"
