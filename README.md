@@ -14,7 +14,7 @@ If you do not have one of these supported resolutions, this error box will apear
   
 ![first](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Game%20Resolution%20Error.png)
 
-## Delete All Intro Movies From Your Respective Game Folder.
+## Step One: Delete All Intro Movies From Your Respective Game Folder.
 
 If you are using the _Steam_ version of Hell Let Loose
 > Steam Intro Movies Location: "*YourSteamInstallPath*\\steamapps\common\Hell Let Loose\HLL\Content\Movies"
@@ -22,7 +22,7 @@ If you are using the _Steam_ version of Hell Let Loose
 If you are using the _Epic Games_ version of Hell Let Loose
 > Epic Games Intro Movies Location: "Program Files\Epic Games\HellLetLooseG0WU4\HLL\Content\Movies"
  
-## Download The Latest Release
+## Step Two: Download The Latest Release
 Download the latest seed script from the [releases](https://github.com/waterjugs/SYN-Seed-Script/releases) page.
 
 Extract the zip file
@@ -53,21 +53,21 @@ Even if you start late you will still be helping out! The task skips over alread
 
 You can manually launch the bot by going to the install directory "C:\users\\*youruserprofile*\hll-seq-seed" and launching script.bat
 
-## Ensure The Script Is Using The Correct Version of Hell Let Loose
+## Step Three: Using The Correct Config.txt Option
 
-This seeding script can work for both the Steam and Epic Games versions of Hell Let Loose.
+This seeding script work for both the Steam and Epic Games versions of Hell Let Loose. 
 
-Go to "C:\users\\*youruserprofile*\hll-seq-seed"
+**By default** this script it set to run for Steam.
 
-Open `config.txt`
+If you are intending on using the _Epic Games_ version of Hell Let Loose, follow these steps below:
 
-Change the option "LAUNCHER=" to `steam` or `epic` depending on which version of Hell Let Loose you are using.
+-Go to "C:\users\\*youruserprofile*\hll-seq-seed"
 
-> If you are using the _Steam_ versison of Hell Let Loose it should look like this:<br>
+-Open `config.txt`
 
-![steam](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Config%20File%20Steam.png)
+-Change the option "LAUNCHER=" from `steam` to `epic`
 
-> If you are using the _Epic Games_ versison of Hell Let Loose it should look like this:<br>
+Save the file, it should now look like this:
 
 ![epic](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Config%20File%20Epic.png)
 
