@@ -16,7 +16,7 @@
 
 > Epic Games Intro Movies Location: > "Program Files\Epic Games\HellLetLooseG0WU4\HLL\Content\Movies"
  
-- Make sure you downloaded the latest release from the [releases](https://github.com/waterjugs/SYN-Seed-Script/releases) page.
+#Make sure you downloaded the latest release from the [releases](https://github.com/waterjugs/SYN-Seed-Script/releases) page.
 - Extract the zip file
 - Double click on `enable.bat` to run
 - Click the `More info` button on the Windows Defender pop up highlighted in red.
@@ -38,7 +38,7 @@
 - Even if you start late you will still be helping out! The task skips over already seeded servers so dont be afraid to start it manualy whenever you can if thats what you want to do.
 - You can manually launch the bot by going to the instal directory "C:\users\\*youruserprofile*\hll-seq-seed" and launching script.bat
 
-### OPTIONAL - IF YOU WANT YOUR COMPUTER TO GO TO SLEEP AFTER SEEDING!
+### Optional - Put Your Computer to Sleep After Seeding
 
 - Go to the install directory should be "C:\users\\*youruserprofile*\hll-seq-seed"
 - Find the script.bat file.
@@ -46,7 +46,7 @@
 - Go to the end of the file
 - Delete the letters "REM" and the space.
 
-- It should now read like:
+-It should now read like:
 
 
 > echo Putting the PC to sleep... <br>
@@ -55,9 +55,9 @@
 > powercfg -h on <br>
 
 
-- It should put your computer to sleep after seeding now.
+-It should put your computer to sleep after seeding now.
 
-### OPTIONAL - IF YOU WANT YOUR COMPUTER TO WAKE UP FROM SLEEP <br>
+### Optional - If You Want Your Computer to Wake From Sleep <br>
 
 -The task is already setup to wake up your computer from sleep, but you must be logged into your computer with your user account running the bot when you put it to sleep. <br>
 -There is unfortunately no way to make the task login after a restart. This is a security decision made by Microsoft.<br>
