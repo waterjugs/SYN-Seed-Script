@@ -2,7 +2,7 @@
 
 This seed script supports the Steam and Epic Games versions of Hell Let Loose.
 
--Verify that you have one of these supported monitor resolutions listed below for the script to work:
+Verify that you have one of these supported monitor resolutions listed below for the script to work:
   - 1920 x 1080
   - 2560 x 1440
   - 3840 x 2160
@@ -10,52 +10,53 @@ This seed script supports the Steam and Epic Games versions of Hell Let Loose.
   - 3440 x 1440
   - 5120 x 2160
 
--If you do not have one of these supported resolutions, this error box will apear when the script runs.
+If you do not have one of these supported resolutions, this error box will apear when the script runs.
   
 ![first](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Game%20Resolution%20Error.png)
 
 ## Delete all Intro Movies from your respective game folder.
 
--If you are using the STEAM version of Hell Let Loose
+If you are using the STEAM version of Hell Let Loose
 > Steam Intro Movies Location: "*YourSteamInstallPath*\\steamapps\common\Hell Let Loose\HLL\Content\Movies"
 
--If you are using the EPIC GAMES version of Hell Let Loose
+If you are using the EPIC GAMES version of Hell Let Loose
 > Epic Games Intro Movies Location: "Program Files\Epic Games\HellLetLooseG0WU4\HLL\Content\Movies"
  
 ## Download the latest release
--Download the latest seed script from the [releases](https://github.com/waterjugs/SYN-Seed-Script/releases) page.
+Download the latest seed script from the [releases](https://github.com/waterjugs/SYN-Seed-Script/releases) page.
 
--Extract the zip file
+Extract the zip file
 
--Double click on `enable.bat` to run
+Double click on `enable.bat` to run
 
--Click the `More info` button on the Windows Defender pop up highlighted in red.
+Click the `More info` button on the Windows Defender pop up highlighted in red.
 
 > Why are you seeing this pop up? Because I am not paying microsoft for a certificate to run this script. If you have concerns about the code you can check all of the exe files in notepad++. The exe files have the instructions they execute at the bottom of the file. 
 
 ![second](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Windows%20Security%2001.png)
 
--Click `Run anyway` highlighted in red.
+Click `Run anyway` highlighted in red.
 
 ![third](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Windows%20Security%2002.png)
 
--Go to "C:\users\\*youruserprofile*\hll-seq-seed"
+Go to "C:\users\\*youruserprofile*\hll-seq-seed"
 
--Repeat these same steps for script.bat
+**Repeat these same steps for `script.bat`**
 
--At this point you should be able to open up your Windows Task Scheduler and see the newly created task `SYN seed`
+At this point you should be able to open up your Windows Task Scheduler and see the newly created task `SYN seed`
 
--You can find your Windows Task Scheduler by hitting the windows key and typing "Task" then clicking on the "Task Schduler"
+You can find your Windows Task Scheduler by hitting the windows key and typing "Task" then clicking on the "Task Schduler"
 
 ![task](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Syn%20Task.png)
   
-- Even if you start late you will still be helping out! The task skips over already seeded servers so dont be afraid to start it manualy whenever you can if thats what you want to do.
-- You can manually launch the bot by going to the instal directory "C:\users\\*youruserprofile*\hll-seq-seed" and launching script.bat
+Even if you start late you will still be helping out! The task skips over already seeded servers so dont be afraid to start it manualy whenever you can if thats what you want to do.
+
+You can manually launch the bot by going to the instal directory "C:\users\\*youruserprofile*\hll-seq-seed" and launching script.bat
 
 ## Using The Correct Version of Hell Let Loose
--Go to "C:\users\\*youruserprofile*\hll-seq-seed"
--Open `config.txt`
--Change the option "LAUNCHER=" to `steam` or `epic` depending on which version of Hell Let Loose you are using.
+Go to "C:\users\\*youruserprofile*\hll-seq-seed"
+Open `config.txt`
+Change the option "LAUNCHER=" to `steam` or `epic` depending on which version of Hell Let Loose you are using.
 
 ### Optional - Put Your Computer to Sleep After Seeding
 
