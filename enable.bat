@@ -25,6 +25,7 @@ if "%CD%"=="%SEED_DIRECTORY%" (
     copy /y "task.xml" "%SEED_DIRECTORY%\"
     copy /y "config.txt" "%SEED_DIRECTORY%\"
     copy /y "Seeder.exe" "%SEED_DIRECTORY%\"
+	copy /y "README.md" "%SEED_DIRECTORY%\"
 )
 
 echo.
