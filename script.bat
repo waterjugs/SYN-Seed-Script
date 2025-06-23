@@ -2,7 +2,7 @@
 for /f "delims=" %%x in (config.txt) do (set "%%x")
 echo Checking to see if HLL is running...
 set "APPLICATION=HLL-Win64-Shipping.exe"
-echo Launching Seed...
+echo Launching "[GER] Oktogon | OKT" Seed...
 echo.
 echo Checking Player counts ..
 
@@ -12,7 +12,7 @@ for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLOKT% ^| %JQ_PATH% -r
 IF NOT DEFINED axiscountOKT goto ServerDownOKT
 IF DEFINED axiscountOKT goto ServerUpOKT
 :ServerDownOKT
-echo Server is Down. Skipping to next Server
+echo The "[GER] Oktogon | OKT" Server is Down. Skipping to the "Ctrl Alt Defeat[Hellfire" server.
 goto CTRLSEED
 :ServerUpOKT
 echo.Allied Faction has %alliedcountOKT% players
@@ -74,7 +74,7 @@ Seeder.exe Allied "[GER] Oktogon | OKT" %LAUNCHER% AltF4
 echo Waiting for HLL to Close.
 timeout /t 60 >nul
 :CTRLSEED
-echo Server is seeded. Onto CTRL
+echo The "[GER] Oktogon | OKT"Server is seeded. Onto the "Ctrl Alt Defeat[Hellfire" server.
 echo Launching Seed...
 echo.
 echo Checking Player counts ..
@@ -147,7 +147,7 @@ Seeder.exe Allied "Ctrl Alt Defeat[Hellfire" %LAUNCHER% AltF4
 echo Waiting for HLL to Close.
 timeout /t 60 >nul
 :SYNSEED
-echo Server is seeded. Onto SYN
+echo The "Ctrl Alt Defeat[Hellfire" Server is seeded. Onto the "Syndicate | US East" server
 echo Launching Seed...
 echo.
 echo Checking Player counts ..
@@ -158,7 +158,7 @@ for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r
 IF NOT DEFINED axiscountSYN goto ServerDownSYN
 IF DEFINED axiscountSYN goto ServerUpSYN
 :ServerDownSYN
-echo Server is Down. Skipping to end.
+echo The "Syndicate | US East" Server is Down. Skipping to end of seeding.
 goto endloop
 :ServerUpSYN
 echo.Allied Faction has %alliedcountSYN% players
