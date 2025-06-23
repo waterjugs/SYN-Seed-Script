@@ -41,6 +41,10 @@ Download the latest seed script from the [releases](https://github.com/waterjugs
 
 ![third](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/Windows%20Security%2002.png)
 
+![fourth](https://github.com/waterjugs/SYN-Seed-Script/blob/screenshots/enable.bat%20yes.png)
+
+-Press "Y" to delete the old hll-seq-seed folder
+
 -Go to "C:\users\\*youruserprofile*\hll-seq-seed"
 
 **Repeat these same steps above for the `script.bat` file**
