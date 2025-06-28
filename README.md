@@ -3,6 +3,7 @@
 This seed script supports the **_Steam_** and **_Epic Games_** versions of Hell Let Loose.
 
 Verify that you have one of these supported monitor resolutions listed below for the script to work:
+  - 480p, 720x480
   - 1920 x 1080
   - 2560 x 1440
   - 3840 x 2160
