@@ -1,81 +1,50 @@
+REM Version: 3.0.4
+@ECHO ON
+
+
+@echo off
+
+REM SafeGuard incase config.txt file doesn't include the variable 
+SET "INSTALL_DIR=hll-seq-seed" 
+
+REM Set the absolute path in the event the enable.bat file is not executed with the install file folder.
+SET "scriptdir=%~dp0"
+
+ if not exist "%scriptdir%config.txt" (
+ echo config.txt file not found at path location %scriptdir%
+goto :exit
+) ELSE (
+ echo config.txt file exists at path location %scriptdir% 
+)
+ 
+
+for /f "delims=" %%x in (%scriptdir%config.txt) do (set "%%x")
+
+setlocal enabledelayedexpansion 
+
+set SEED_DIRECTORY=%USERPROFILE%\%INSTALL_DIR%
+
+
+
+:PowerShell
+SET PSScript=%temp%\~tmpDlFile.ps1
+IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
+ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
+ECHO Invoke-WebRequest "https://github.com/waterjugs/SYN-Seed-Script/archive/refs/heads/main.zip" -OutFile "main.zip">>"%PSScript%"
+
+Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
+
+tar -xf main.zip
+
+xcopy /s /e /y "%SEED_DIRECTORY%\SYN-Seed-Script-main" "%SEED_DIRECTORY%\"
+echo.
+echo Directory copied.
+
 @echo off
 for /f "delims=" %%x in (config.txt) do (set "%%x")
 echo Checking to see if HLL is running...
 set "APPLICATION=HLL-Win64-Shipping.exe"
-echo Launching "[GER] Oktogon | OKT" Seed...
-echo.
-echo Checking Player counts ..
-
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLOKT% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountOKT=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLOKT% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountOKT=%%i
-
-IF NOT DEFINED axiscountOKT goto ServerDownOKT
-IF DEFINED axiscountOKT goto ServerUpOKT
-:ServerDownOKT
-echo The "[GER] Oktogon | OKT" Server is Down. Skipping to the "Ctrl Alt Defeat[Hellfire" server.
-goto CTRLSEED
-:ServerUpOKT
-echo.Allied Faction has %alliedcountOKT% players
-echo.Axis Faction has %axiscountOKT% players
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLOKT% ^| %JQ_PATH% -r ".result.player_count"`) do set countOKT=%%i
-echo.Player Count %countOKT%
-If %countOKT% gtr %SEEDED_THRESHOLD% (
-goto CTRLSEED
-)
-
-if %alliedcountOKT% leq %axiscountOKT% (
-echo Launching as Allies. Time to Launch 4.5 Minutes.
-Seeder.exe Allied "[GER] Oktogon | OKT" %LAUNCHER% SpawnSL
-timeout /t 10 >nul
-goto OKTloop
-) else (
-echo Launching as Axis. Time to Launch 4.5 Minutes.
-Seeder.exe Axis "[GER] Oktogon | OKT" %LAUNCHER% SpawnSL
-timeout /t 10 >nul
-
-goto OKTloop
-)
-
-
-
-:OKTloop
-
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLOKT% ^| %JQ_PATH% -r ".result.player_count"`) do set countOKT=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLOKT% ^| %JQ_PATH% -r ".result.time_remaining"`) do set timeOKT=%%i
-for /f "tokens=1,2 delims=." %%a  in ("%timeOKT%") do (set timeOKT=%%a)
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLOKT% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountOKT=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLOKT% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountOKT=%%i
-
-if %countOKT% gtr %SEEDED_THRESHOLD% (
-    echo Player count is greater than %SEEDED_THRESHOLD%.
-    goto endloop
-) else (
-    echo Player count is %countOKT%. Waiting 30 seconds...
-	echo Timeleft: %timeOKT%
-	if %timeOKT% geq 5280 (
-	echo New Map.
-		if %alliedcountOKT% leq %axiscountOKT% (
-		echo Spawning
-		Seeder.exe Allied "[GER] Oktogon | OKT" %LAUNCHER% ReSpawnSL
-		) else (
-		echo Spawning
-		Seeder.exe Axis "[GER] Oktogon | OKT" %LAUNCHER% ReSpawnSL
-		)
-	timeout /t 120 >nul
-	goto OKTloop
-	) else (
-    timeout /t 60 >nul
-    goto OKTloop
-)
-)
-
-:endloop
-Seeder.exe Allied "[GER] Oktogon | OKT" %LAUNCHER% AltF4
-echo Waiting for HLL to Close.
-timeout /t 60 >nul
-:CTRLSEED
-echo The "[GER] Oktogon | OKT"Server is seeded. Onto the "Ctrl Alt Defeat[Hellfire" server.
-echo Launching Seed...
+echo Launching CTRL Alt Defeat Seed...
 echo.
 echo Checking Player counts ..
 
@@ -85,7 +54,7 @@ for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -
 IF NOT DEFINED axiscountCTRL goto ServerDownCTRL
 IF DEFINED axiscountCTRL goto ServerUpCTRL
 :ServerDownCTRL
-echo Server is Down. Skipping to next server.
+echo The CTRL Alt Defeat Server is Down. Skipping to the Syndicate server.
 goto SYNSEED
 :ServerUpCTRL
 echo.Allied Faction has %alliedcountCTRL% players
@@ -138,6 +107,7 @@ if %countCTRL% gtr %SEEDED_THRESHOLD% (
 	goto CTRLloop
 	) else (
     timeout /t 30 >nul
+	Seeder.exe Allied "Ctrl Alt Defeat[Hellfire" %LAUNCHER% AFK
     goto CTRLloop
 )
 )
@@ -148,7 +118,7 @@ echo Waiting for HLL to Close.
 timeout /t 60 >nul
 :SYNSEED
 echo The "Ctrl Alt Defeat[Hellfire" Server is seeded. Onto the "Syndicate | US East" server
-echo Launching Seed...
+echo Launching "Syndicate | US East" Seed...
 echo.
 echo Checking Player counts ..
 
@@ -166,7 +136,7 @@ echo.Axis Faction has %axiscountSYN% players
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r ".result.player_count"`) do set countSYN=%%i
 echo.Player Count %countSYN%
 If %countSYN% gtr %SEEDED_THRESHOLD% (
-goto CTRLSEED
+goto endloop
 )
 
 if %alliedcountSYN% leq %axiscountSYN% (
@@ -211,11 +181,14 @@ if %countSYN% gtr %SEEDED_THRESHOLD% (
 	goto SYNloop
 	) else (
     timeout /t 30 >nul
+	Seeder.exe Allied "Syndicate | US East" %LAUNCHER% AFK
     goto SYNloop
 )
 )
 
 :endloop
+echo All servers have been seeded! Thank you for contributing.
+timeout /t 30 >nul
 Seeder.exe Allied "Syndicate | US East" %LAUNCHER% AltF4
 echo Waiting for HLL to Close.
 timeout /t 60 >nul

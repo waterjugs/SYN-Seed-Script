@@ -6,7 +6,6 @@ JQ_PATH=%USERPROFILE%\hll-seq-seed\jq\jq.exe
 
 SEEDED_THRESHOLD=75
 
-RCON_URLOKT=http://152.53.162.48:8010/api/get_public_info
 RCON_URLCTRL=http://45.59.162.147:8010/api/get_public_info
 RCON_URLSYN=https://stats.syn.team/api/get_public_info
 
