@@ -44,81 +44,7 @@ echo Directory copied.
 for /f "delims=" %%x in (config.txt) do (set "%%x")
 echo Checking to see if HLL is running...
 set "APPLICATION=HLL-Win64-Shipping.exe"
-echo Launching CTRL Alt Defeat Seed...
-echo.
-echo Checking Player counts ..
-
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountCTRL=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountCTRL=%%i
-
-IF NOT DEFINED axiscountCTRL goto ServerDownCTRL
-IF DEFINED axiscountCTRL goto ServerUpCTRL
-:ServerDownCTRL
-echo The CTRL Alt Defeat Server is Down. Skipping to the Syndicate server.
-goto SYNSEED
-:ServerUpCTRL
-echo.Allied Faction has %alliedcountCTRL% players
-echo.Axis Faction has %axiscountCTRL% players
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count"`) do set countCTRL=%%i
-echo.Player Count %countCTRL%
-If %countCTRL% gtr %SEEDED_THRESHOLD% (
-goto SYNSEED
-)
-
-if %alliedcountCTRL% leq %axiscountCTRL% (
-echo Launching as Allies. Time to Launch 4.5 Minutes.
-Seeder.exe Allied "Ctrl Alt Defeat[Hellfire" %LAUNCHER% SpawnSL
-timeout /t 10 >nul
-goto CTRLloop
-) else (
-echo Launching as Axis. Time to Launch 4.5 Minutes.
-Seeder.exe Axis "Ctrl Alt Defeat[Hellfire" %LAUNCHER% SpawnSL
-timeout /t 10 >nul
-
-goto CTRLloop
-)
-
-
-
-:CTRLloop
-
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count"`) do set countCTRL=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.time_remaining"`) do set timeCTRL=%%i
-for /f "tokens=1,2 delims=." %%a  in ("%timeCTRL%") do (set timeCTRL=%%a)
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountCTRL=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountCTRL=%%i
-
-if %countCTRL% gtr %SEEDED_THRESHOLD% (
-    echo Player count is greater than %SEEDED_THRESHOLD%.
-    goto endloop
-) else (
-    echo Player count is %countCTRL%. Waiting 30 seconds...
-	echo Timeleft: %timeCTRL%
-	if %timeCTRL% geq 5280 (
-	echo New Map.
-		if %alliedcountCTRL% leq %axiscountCTRL% (
-		echo Spawning
-		Seeder.exe Allied "Ctrl Alt Defeat[Hellfire" %LAUNCHER% ReSpawnSL
-		) else (
-		echo Spawning
-		Seeder.exe Axis "Ctrl Alt Defeat[Hellfire" %LAUNCHER% ReSpawnSL
-		)
-	timeout /t 120 >nul
-	goto CTRLloop
-	) else (
-    timeout /t 30 >nul
-	Seeder.exe Allied "Ctrl Alt Defeat[Hellfire" %LAUNCHER% AFK
-    goto CTRLloop
-)
-)
-
-:endloop
-Seeder.exe Allied "Ctrl Alt Defeat[Hellfire" %LAUNCHER% AltF4
-echo Waiting for HLL to Close.
-timeout /t 60 >nul
-:SYNSEED
-echo The "Ctrl Alt Defeat[Hellfire" Server is seeded. Onto the "Syndicate | US East" server
-echo Launching "Syndicate | US East" Seed...
+echo Launching "SYNDICATE | US EAST" Seed...
 echo.
 echo Checking Player counts ..
 
@@ -128,15 +54,15 @@ for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r
 IF NOT DEFINED axiscountSYN goto ServerDownSYN
 IF DEFINED axiscountSYN goto ServerUpSYN
 :ServerDownSYN
-echo The "Syndicate | US East" Server is Down. Skipping to end of seeding.
-goto endloop
+echo The "SYNDICATE | US EAST" Server is Down. Skipping to The "Ctrl Alt Defeat[Hellfire" Server.
+goto CTRLSEED
 :ServerUpSYN
 echo.Allied Faction has %alliedcountSYN% players
 echo.Axis Faction has %axiscountSYN% players
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r ".result.player_count"`) do set countSYN=%%i
 echo.Player Count %countSYN%
 If %countSYN% gtr %SEEDED_THRESHOLD% (
-goto endloop
+goto CTRLSEED
 )
 
 if %alliedcountSYN% leq %axiscountSYN% (
@@ -172,21 +98,94 @@ if %countSYN% gtr %SEEDED_THRESHOLD% (
 	echo New Map.
 		if %alliedcountSYN% leq %axiscountSYN% (
 		echo Spawning
-		Seeder.exe Allied "Syndicate | US East" %LAUNCHER% ReSpawnSL
+		Seeder.exe Allied %LAUNCHER% ReSpawnSL
 		) else (
 		echo Spawning
-		Seeder.exe Axis "Syndicate | US East" %LAUNCHER% ReSpawnSL
+		Seeder.exe Axis %LAUNCHER% ReSpawnSL
 		)
 	timeout /t 120 >nul
 	goto SYNloop
 	) else (
     timeout /t 30 >nul
-	Seeder.exe Allied "Syndicate | US East" %LAUNCHER% AFK
     goto SYNloop
 )
 )
 
 :endloop
+Seeder.exe Allied "SYNDICATE | US EAST" %LAUNCHER% AltF4
+echo Waiting for HLL to Close.
+timeout /t 60 >nul
+:CTRLSEED
+echo The "SYNDICATE | US EAST" Server is seeded. Onto The "Ctrl Alt Defeat[Hellfire" Server.
+echo Launching "Ctrl Alt Defeat[Hellfire" Seed...
+echo.
+echo Checking Player counts ..
+
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountCTRL=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountCTRL=%%i
+
+IF NOT DEFINED axiscountCTRL goto ServerDownCTRL
+IF DEFINED axiscountCTRL goto ServerUpCTRL
+:ServerDownCTRL
+echo The "Ctrl Alt Defeat[Hellfire" is Down. Skipping to end of seed sequence.
+goto endloop
+:ServerUpCTRL
+echo.Allied Faction has %alliedcountCTRL% players
+echo.Axis Faction has %axiscountCTRL% players
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count"`) do set countCTRL=%%i
+echo.Player Count %countCTRL%
+If %countCTRL% gtr %SEEDED_THRESHOLD% (
+goto endloop
+)
+
+if %alliedcountCTRL% leq %axiscountCTRL% (
+echo Launching as Allies. Time to Launch 4.5 Minutes.
+Seeder.exe Allied "Ctrl Alt Defeat[Hellfire" %LAUNCHER% SpawnSL
+timeout /t 10 >nul
+goto CTRLloop
+) else (
+echo Launching as Axis. Time to Launch 4.5 Minutes.
+Seeder.exe Axis "Ctrl Alt Defeat[Hellfire" %LAUNCHER% SpawnSL
+timeout /t 10 >nul
+
+goto CTRLloop
+)
+
+
+
+:CTRLloop
+
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count"`) do set countCTRL=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.time_remaining"`) do set timeCTRL=%%i
+for /f "tokens=1,2 delims=." %%a  in ("%timeCTRL%") do (set timeCTRL=%%a)
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountCTRL=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountCTRL=%%i
+
+if %countCTRL% gtr %SEEDED_THRESHOLD% (
+    echo Player count is greater than %SEEDED_THRESHOLD%.
+    goto endloop
+) else (
+    echo Player count is %countCTRL%. Waiting 30 seconds...
+	echo Timeleft: %timeCTRL%
+	if %timeCTRL% geq 5280 (
+	echo New Map.
+		if %alliedcountCTRL% leq %axiscountCTRL% (
+		echo Spawning
+		Seeder.exe Allied %LAUNCHER% ReSpawnSL
+		) else (
+		echo Spawning
+		Seeder.exe Axis %LAUNCHER% ReSpawnSL
+		)
+	timeout /t 120 >nul
+	goto CTRLloop
+	) else (
+    timeout /t 30 >nul
+    goto CTRLloop
+)
+)
+
+:endloop
+
 echo All servers have been seeded! Thank you for contributing.
 timeout /t 30 >nul
 Seeder.exe Allied "Syndicate | US East" %LAUNCHER% AltF4
@@ -199,3 +198,4 @@ REM rundll32.exe powrprof.dll,SetSuspendState 0,1,0
 REM powercfg -h on
 
 echo PC is now asleep.
+
