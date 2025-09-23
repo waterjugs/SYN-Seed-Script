@@ -188,7 +188,7 @@ if %countCTRL% gtr %SEEDED_THRESHOLD% (
 
 echo All servers have been seeded! Thank you for contributing.
 timeout /t 30 >nul
-Seeder.exe Allied "Syndicate | US East" %LAUNCHER% AltF4
+Seeder.exe Allied "Ctrl Alt Defeat[Hellfire" %LAUNCHER% AltF4
 echo Waiting for HLL to Close.
 timeout /t 60 >nul
 
@@ -198,4 +198,5 @@ REM rundll32.exe powrprof.dll,SetSuspendState 0,1,0
 REM powercfg -h on
 
 echo PC is now asleep.
+
 
