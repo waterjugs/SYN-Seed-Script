@@ -171,10 +171,10 @@ if %countCTRL% gtr %SEEDED_THRESHOLD% (
 	echo New Map.
 		if %alliedcountCTRL% leq %axiscountCTRL% (
 		echo Spawning
-		Seeder.exe Allied %LAUNCHER% ReSpawnSL
+		Seeder.exe Allied "Ctrl Alt Defeat[Hellfire" %LAUNCHER% ReSpawnSL
 		) else (
 		echo Spawning
-		Seeder.exe Axis %LAUNCHER% ReSpawnSL
+		Seeder.exe Axis "Ctrl Alt Defeat[Hellfire" %LAUNCHER% ReSpawnSL
 		)
 	timeout /t 120 >nul
 	goto CTRLloop
@@ -198,5 +198,3 @@ REM rundll32.exe powrprof.dll,SetSuspendState 0,1,0
 REM powercfg -h on
 
 echo PC is now asleep.
-
-
