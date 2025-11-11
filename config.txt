@@ -4,9 +4,11 @@ JQ_URL=https://github.com/stedolan/jq/releases/latest/download/jq-win64.exe
 JQ_INSTALL_PATH=%USERPROFILE%\hll-seq-seed\jq
 JQ_PATH=%USERPROFILE%\hll-seq-seed\jq\jq.exe
 
-SEEDED_THRESHOLD=75
+SEEDED_THRESHOLD=80
 
 RCON_URLCTRL=http://45.59.162.147:8010/api/get_public_info
 RCON_URLSYN=https://stats.syn.team/api/get_public_info
+RCON_URLROTN=https://rotn-stats.crcon.cc/api/get_public_info
+RCON_URLEXILED=https://exiles-stats.hlladmin.com/api/get_public_info
 
-LAUNCHER=steam
+LAUNCHER=Steam
