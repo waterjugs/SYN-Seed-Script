@@ -15,4 +15,5 @@
    - Edit `%USERPROFILE%\hll-seq-seed\config.txt` if using Epic Games launcher
    - Change `LAUNCHER=Steam` to `LAUNCHER=epic`
 
-
+5. **Uninstall if needed:**
+   - **Easy way:** Double-click `uninstall.bat` 
