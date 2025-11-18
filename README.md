@@ -3,7 +3,7 @@
 1. **Extract the zip file**
 
 2. **Run the installer:**
-   - **Easy way:** Right-click `install.bat` then RUN AS ADMINISTRATOR
+   - **Easy way:** Right-click `installer.bat` then RUN AS ADMINISTRATOR
 
 3. **Follow the prompts:**
    - Choose whether to perform a clean installation (if directory exists)
@@ -16,4 +16,5 @@
    - Change `LAUNCHER=Steam` to `LAUNCHER=epic`
 
 5. **Uninstall if needed:**
-   - **Easy way:** Double-click `uninstall.bat` 
+   - **Easy way:** Double-click `uninstaller.bat` 
+
