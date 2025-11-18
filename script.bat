@@ -27,7 +27,7 @@ set SEED_DIRECTORY=%USERPROFILE%\%INSTALL_DIR%
 
 
 :PowerShell
-Download updates from GitHub
+REM Download updates from GitHub
 SET PSScript=%temp%\~tmpDlFile.ps1
 IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
 ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
@@ -37,7 +37,7 @@ Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
 
 tar -xf main.zip
 
-Copy all files including script.bat from GitHub download
+REM Copy all files including script.bat from GitHub download
 if exist "%SEED_DIRECTORY%\SYN-Seed-Script-main" (
     xcopy /s /e /y "%SEED_DIRECTORY%\SYN-Seed-Script-main\*" "%SEED_DIRECTORY%\" >nul 2>&1
 )
@@ -50,10 +50,10 @@ for /f "delims=" %%x in (%scriptdir%config.txt) do (set "%%x")
 echo Checking to see if HLL is running...
 set "APPLICATION=HLL-Win64-Shipping.exe"
 
-Wait for HLL to start before proceeding
+REM Wait for HLL to start before proceeding
 call :WaitForHLL
 
-Function to wait for HLL window
+REM Function to wait for HLL window
 :WaitForHLL
 tasklist /FI "IMAGENAME eq %APPLICATION%" 2>NUL | find /I /N "%APPLICATION%">NUL
 if errorlevel 1 (
@@ -62,9 +62,9 @@ if errorlevel 1 (
     goto WaitForHLL
 )
 echo HLL process detected. Waiting for window to be ready...
-Wait additional time for window to be fully ready
+REM Wait additional time for window to be fully ready
 timeout /t 10 >nul
-Use PowerShell to verify window actually exists
+REM Use PowerShell to verify window actually exists
 powershell -Command "$proc = Get-Process '%APPLICATION%' -ErrorAction SilentlyContinue; if ($proc) { $hwnd = $proc.MainWindowHandle; if ($hwnd -ne 0) { exit 0 } else { exit 1 } } else { exit 1 }" >nul 2>&1
 if errorlevel 1 (
     echo Window not ready yet, waiting more...
@@ -95,13 +95,13 @@ If %countCTRL% gtr %SEEDED_THRESHOLD% (
 goto EXILEDSEED
 )
 
-Wait for HLL window to be available before calling Seeder.exe
+REM Wait for HLL window to be available before calling Seeder.exe
 echo Waiting for HLL window to be ready...
 set "HLL_READY=0"
 for /L %%w in (1,1,60) do (
     tasklist /FI "IMAGENAME eq %APPLICATION%" 2>NUL | find /I /N "%APPLICATION%">NUL
     if not errorlevel 1 (
-Process found, now verify window exists
+        REM Process found, now verify window exists
         powershell -Command "$proc = Get-Process '%APPLICATION%' -ErrorAction SilentlyContinue; if ($proc) { $hwnd = $proc.MainWindowHandle; if ($hwnd -ne 0) { exit 0 } else { exit 1 } } else { exit 1 }" >nul 2>&1
         if not errorlevel 1 (
             timeout /t 10 >nul
@@ -153,7 +153,7 @@ if %countCTRL% gtr %SEEDED_THRESHOLD% (
 	echo Timeleft: %timeCTRL%
 	if %timeCTRL% geq 5280 (
 	echo New Map.
-Wait for HLL window before respawning
+		REM Wait for HLL window before respawning
 		tasklist /FI "IMAGENAME eq %APPLICATION%" 2>NUL | find /I /N "%APPLICATION%">NUL
 		if not errorlevel 1 (
 			if %alliedcountCTRL% leq %axiscountCTRL% (
@@ -226,13 +226,13 @@ If %countEXILED% gtr %SEEDED_THRESHOLD% (
 goto ROTNSEED
 )
 
-Wait for HLL window to be available before calling Seeder.exe
+REM Wait for HLL window to be available before calling Seeder.exe
 echo Waiting for HLL window to be ready...
 set "HLL_READY=0"
 for /L %%w in (1,1,60) do (
     tasklist /FI "IMAGENAME eq %APPLICATION%" 2>NUL | find /I /N "%APPLICATION%">NUL
     if not errorlevel 1 (
-Process found, now verify window exists
+        REM Process found, now verify window exists
         powershell -Command "$proc = Get-Process '%APPLICATION%' -ErrorAction SilentlyContinue; if ($proc) { $hwnd = $proc.MainWindowHandle; if ($hwnd -ne 0) { exit 0 } else { exit 1 } } else { exit 1 }" >nul 2>&1
         if not errorlevel 1 (
             timeout /t 10 >nul
@@ -284,7 +284,7 @@ if %countEXILED% gtr %SEEDED_THRESHOLD% (
 	echo Timeleft: %timeEXILED%
 	if %timeEXILED% geq 5280 (
 	echo New Map.
-Wait for HLL window before respawning
+		REM Wait for HLL window before respawning
 		tasklist /FI "IMAGENAME eq %APPLICATION%" 2>NUL | find /I /N "%APPLICATION%">NUL
 		if not errorlevel 1 (
 			if %alliedcountEXILED% leq %axiscountEXILED% (
@@ -357,13 +357,13 @@ If %countROTN% gtr %SEEDED_THRESHOLD% (
 goto SYNSEED
 )
 
-Wait for HLL window to be available before calling Seeder.exe
+REM Wait for HLL window to be available before calling Seeder.exe
 echo Waiting for HLL window to be ready...
 set "HLL_READY=0"
 for /L %%w in (1,1,60) do (
     tasklist /FI "IMAGENAME eq %APPLICATION%" 2>NUL | find /I /N "%APPLICATION%">NUL
     if not errorlevel 1 (
-Process found, now verify window exists
+        REM Process found, now verify window exists
         powershell -Command "$proc = Get-Process '%APPLICATION%' -ErrorAction SilentlyContinue; if ($proc) { $hwnd = $proc.MainWindowHandle; if ($hwnd -ne 0) { exit 0 } else { exit 1 } } else { exit 1 }" >nul 2>&1
         if not errorlevel 1 (
             timeout /t 10 >nul
@@ -415,7 +415,7 @@ if %countROTN% gtr %SEEDED_THRESHOLD% (
 	echo Timeleft: %timeROTN%
 	if %timeROTN% geq 10680 (
 	echo New Map.
-Wait for HLL window before respawning
+		REM Wait for HLL window before respawning
 		tasklist /FI "IMAGENAME eq %APPLICATION%" 2>NUL | find /I /N "%APPLICATION%">NUL
 		if not errorlevel 1 (
 			if %alliedcountROTN% leq %axiscountROTN% (
@@ -488,13 +488,13 @@ If %countSYN% gtr %SEEDED_THRESHOLD% (
 goto endFINAL
 )
 
-Wait for HLL window to be available before calling Seeder.exe
+REM Wait for HLL window to be available before calling Seeder.exe
 echo Waiting for HLL window to be ready...
 set "HLL_READY=0"
 for /L %%w in (1,1,60) do (
     tasklist /FI "IMAGENAME eq %APPLICATION%" 2>NUL | find /I /N "%APPLICATION%">NUL
     if not errorlevel 1 (
-Process found, now verify window exists
+        REM Process found, now verify window exists
         powershell -Command "$proc = Get-Process '%APPLICATION%' -ErrorAction SilentlyContinue; if ($proc) { $hwnd = $proc.MainWindowHandle; if ($hwnd -ne 0) { exit 0 } else { exit 1 } } else { exit 1 }" >nul 2>&1
         if not errorlevel 1 (
             timeout /t 10 >nul
@@ -546,7 +546,7 @@ if %countSYN% gtr %SEEDED_THRESHOLD% (
 	echo Timeleft: %timeSYN%
 	if %timeSYN% geq 5280 (
 	echo New Map.
-Wait for HLL window before respawning
+		REM Wait for HLL window before respawning
 		tasklist /FI "IMAGENAME eq %APPLICATION%" 2>NUL | find /I /N "%APPLICATION%">NUL
 		if not errorlevel 1 (
 			if %alliedcountSYN% leq %axiscountSYN% (
