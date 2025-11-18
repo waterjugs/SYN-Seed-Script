@@ -3,7 +3,7 @@
 1. **Extract the zip file**
 
 2. **Run the installer:**
-   - **Easy way:** Double-click `install.bat` RUN AS ADMINISTRATOR
+   - **Easy way:** Right-click `install.bat` then RUN AS ADMINISTRATOR
 
 3. **Follow the prompts:**
    - Choose whether to perform a clean installation (if directory exists)
@@ -14,4 +14,5 @@
 4. **Configure if needed:**
    - Edit `%USERPROFILE%\hll-seq-seed\config.txt` if using Epic Games launcher
    - Change `LAUNCHER=Steam` to `LAUNCHER=epic`
+
 
