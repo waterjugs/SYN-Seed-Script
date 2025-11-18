@@ -7,8 +7,8 @@ JQ_PATH=%USERPROFILE%\hll-seq-seed\jq\jq.exe
 SEEDED_THRESHOLD=80
 
 RCON_URLCTRL=http://45.59.162.147:8010/api/get_public_info
-RCON_URLSYN=http://stats.syn.team/api/get_public_info
-RCON_URLROTN=http://rotn-stats.crcon.cc/api/get_public_info
 RCON_URLEXILED=http://exiles-stats.hlladmin.com/api/get_public_info
+RCON_URLROTN=http://rotn-stats.crcon.cc/api/get_public_info
+RCON_URLSYN=http://stats.syn.team/api/get_public_info
 
 LAUNCHER=Steam
