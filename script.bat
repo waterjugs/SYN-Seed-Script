@@ -116,7 +116,7 @@ echo Waiting for HLL to Close.
 timeout /t 60 >nul
 
 :EXILEDSEED
-echo The "=ROTN= OnlyToes" Server is seeded. Onto the "Exiled" server.
+echo The "Ctrl Alt Defeat[Hellfire" Server is seeded. Onto the "Exiled" server.
 echo Launching "Exiled" Seed...
 echo.
 echo Checking Player counts ..
@@ -333,3 +333,4 @@ REM rundll32.exe powrprof.dll,SetSuspendState 0,1,0
 REM powercfg -h on
 
 echo PC is now asleep.
+
