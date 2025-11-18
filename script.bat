@@ -55,14 +55,14 @@ IF NOT DEFINED axiscountCTRL goto ServerDownCTRL
 IF DEFINED axiscountCTRL goto ServerUpCTRL
 :ServerDownCTRL
 echo The "Ctrl Alt Defeat[Hellfire" Server is Down. Skipping to the "Exiled" server.
-goto APESEED
+goto EXILEDSEED
 :ServerUpCTRL
 echo.Allied Faction has %alliedcountCTRL% players
 echo.Axis Faction has %axiscountCTRL% players
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count"`) do set countCTRL=%%i
 echo.Player Count %countCTRL%
 If %countCTRL% gtr %SEEDED_THRESHOLD% (
-goto APESEED
+goto EXILEDSEED
 )
 
 if %alliedcountCTRL% leq %axiscountCTRL% (
@@ -116,53 +116,53 @@ if %countCTRL% gtr %SEEDED_THRESHOLD% (
 Seeder.exe Allied "Ctrl Alt Defeat[Hellfire" %LAUNCHER% AltF4
 echo Waiting for HLL to Close.
 timeout /t 60 >nul
-:APESEED
+:EXILEDSEED
 echo The "Ctrl Alt Defeat[Hellfire" Server is seeded. Onto the "Exiled" server
 echo Launching "Exiled" Seed...
 echo.
 echo Checking Player counts ..
 
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLAPE% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountAPE=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLAPE% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountAPE=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLEXILED% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountEXILED=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLEXILED% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountEXILED=%%i
 
-IF NOT DEFINED axiscountAPE goto ServerDownAPE
-IF DEFINED axiscountAPE goto ServerUpAPE
-:ServerDownAPE
+IF NOT DEFINED axiscountEXILED goto ServerDownEXILED
+IF DEFINED axiscountEXILED goto ServerUpEXILED
+:ServerDownEXILED
 echo The "Exiled" Server is Down. Skipping to "=ROTN= OnlyToes" server.
 goto ROTNSEED
-:ServerUpAPE
-echo.Allied Faction has %alliedcountAPE% players
-echo.Axis Faction has %axiscountAPE% players
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLAPE% ^| %JQ_PATH% -r ".result.player_count"`) do set countAPE=%%i
-echo.Player Count %countAPE%
-If %countAPE% gtr %SEEDED_THRESHOLD% (
-goto endAPE
+:ServerUpEXILED
+echo.Allied Faction has %alliedcountEXILED% players
+echo.Axis Faction has %axiscountEXILED% players
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLEXILED% ^| %JQ_PATH% -r ".result.player_count"`) do set countEXILED=%%i
+echo.Player Count %countEXILED%
+If %countEXILED% gtr %SEEDED_THRESHOLD% (
+goto endEXILED
 )
 
-if %alliedcountAPE% leq %axiscountAPE% (
+if %alliedcountEXILED% leq %axiscountEXILED% (
 echo Launching as Allies. Time to Launch 4.5 Minutes.
 Seeder.exe Allied "Exiled" %LAUNCHER% SpawnSL
 timeout /t 10 >nul
-goto APEloop
+goto EXILEDloop
 ) else (
 echo Launching as Axis. Time to Launch 4.5 Minutes.
 Seeder.exe Axis "Exiled" %LAUNCHER% SpawnSL
 timeout /t 10 >nul
 
-goto APEloop
+goto EXILEDloop
 )
 
 
 
-:APEloop
+:EXILEDloop
 
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLAPE% ^| %JQ_PATH% -r ".result.player_count"`) do set countAPE=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLAPE% ^| %JQ_PATH% -r ".result.time_remaining"`) do set timeAPE=%%i
-for /f "tokens=1,2 delims=." %%a  in ("%timeAPE%") do (set timeAPE=%%a)
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLAPE% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountAPE=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLAPE% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountAPE=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLEXILED% ^| %JQ_PATH% -r ".result.player_count"`) do set countEXILED=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLEXILED% ^| %JQ_PATH% -r ".result.time_remaining"`) do set timeEXILED=%%i
+for /f "tokens=1,2 delims=." %%a  in ("%timeEXILED%") do (set timeEXILED=%%a)
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLEXILED% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountEXILED=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLEXILED% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountEXILED=%%i
 
-if %countAPE% gtr %SEEDED_THRESHOLD% (
+if %countEXILED% gtr %SEEDED_THRESHOLD% (
     echo "Exiled" Player count is greater than %SEEDED_THRESHOLD%.
     goto ROTNSEED
 ) else (
