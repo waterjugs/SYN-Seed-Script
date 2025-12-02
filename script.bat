@@ -195,7 +195,7 @@ for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLROTN% ^| %JQ_PATH% -
 IF NOT DEFINED axiscountROTN goto ServerDownROTN
 IF DEFINED axiscountROTN goto ServerUpROTN
 :ServerDownROTN
-echo The "=ROTN= OnlyToes" Server is Down. Skipping to the "Syndicate | US East" server.
+echo The "=ROTN= OnlyToes" Server is Down. Skipping to the "Syndicate US - Level 50" server.
 goto EXILEDSEED
 :ServerUpROTN
 echo.Allied Faction has %alliedcountROTN% players
@@ -255,8 +255,8 @@ echo Waiting for HLL to Close.
 timeout /t 60 >nul
 
 :SYNSEED
-echo The "Ctrl Alt Defeat[Hellfire" Server is seeded. Onto the "Syndicate | US East" server
-echo Launching "Syndicate | US East" Seed...
+echo The "Ctrl Alt Defeat[Hellfire" Server is seeded. Onto the "Syndicate US - Level 50" server
+echo Launching "Syndicate US - Level 50" Seed...
 echo.
 echo Checking Player counts ..
 
@@ -266,7 +266,7 @@ for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r
 IF NOT DEFINED axiscountSYN goto ServerDownSYN
 IF DEFINED axiscountSYN goto ServerUpSYN
 :ServerDownSYN
-echo The "Syndicate | US East" Server is Down. Skipping to end of seeding.
+echo The "Syndicate US - Level 50" Server is Down. Skipping to end of seeding.
 goto endFINAL
 :ServerUpSYN
 echo.Allied Faction has %alliedcountSYN% players
@@ -279,12 +279,12 @@ goto endFINAL
 
 if %alliedcountSYN% leq %axiscountSYN% (
 echo Launching as Allies. Time to Launch 4.5 Minutes.
-Seeder.exe Allied "Syndicate | US East" %LAUNCHER% SpawnSL
+Seeder.exe Allied "Syndicate US - Level 50" %LAUNCHER% SpawnSL
 timeout /t 10 >nul
 goto SYNloop
 ) else (
 echo Launching as Axis. Time to Launch 4.5 Minutes.
-Seeder.exe Axis "Syndicate | US East" %LAUNCHER% SpawnSL
+Seeder.exe Axis "Syndicate US - Level 50" %LAUNCHER% SpawnSL
 timeout /t 10 >nul
 
 goto SYNloop
@@ -297,25 +297,25 @@ for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountSYN=%%i
 
 if %countSYN% gtr %SEEDED_THRESHOLD% (
-    echo "Syndicate | US East" Player count is greater than %SEEDED_THRESHOLD%.
+    echo "Syndicate US - Level 50" Player count is greater than %SEEDED_THRESHOLD%.
     goto endFINAL
 ) else (
-    echo "Syndicate | US East" Player count is %countSYN%. Waiting 30 seconds...
+    echo "Syndicate US - Level 50" Player count is %countSYN%. Waiting 30 seconds...
 	echo Timeleft: %timeSYN%
 	if %timeSYN% geq 5280 (
 	echo New Map.
 		if %alliedcountSYN% leq %axiscountSYN% (
 		echo Spawning
-		Seeder.exe Allied "Syndicate | US East" %LAUNCHER% ReSpawnSL
+		Seeder.exe Allied "Syndicate US - Level 50" %LAUNCHER% ReSpawnSL
 		) else (
 		echo Spawning
-		Seeder.exe Axis "Syndicate | US East" %LAUNCHER% ReSpawnSL
+		Seeder.exe Axis "Syndicate US - Level 50" %LAUNCHER% ReSpawnSL
 		)
 	timeout /t 120 >nul
 	goto SYNloop
 	) else (
     timeout /t 30 >nul
-	Seeder.exe Allied "Syndicate | US East" %LAUNCHER% AFK
+	Seeder.exe Allied "Syndicate US - Level 50" %LAUNCHER% AFK
     goto SYNloop
 )
 )
@@ -323,7 +323,7 @@ if %countSYN% gtr %SEEDED_THRESHOLD% (
 :endFINAL
 echo All servers have been seeded! Thank you for contributing.
 timeout /t 30 >nul
-Seeder.exe Allied "Syndicate | US East" %LAUNCHER% AltF4
+Seeder.exe Allied "Syndicate US - Level 50" %LAUNCHER% AltF4
 echo Waiting for HLL to Close.
 timeout /t 60 >nul
 
