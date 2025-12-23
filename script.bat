@@ -1,45 +1,3 @@
-REM Version: 3.0.4
-@ECHO ON
-
-
-@echo off
-
-REM SafeGuard incase config.txt file doesn't include the variable 
-SET "INSTALL_DIR=hll-seq-seed" 
-
-REM Set the absolute path in the event the enable.bat file is not executed with the install file folder.
-SET "scriptdir=%~dp0"
-
- if not exist "%scriptdir%config.txt" (
- echo config.txt file not found at path location %scriptdir%
-goto :exit
-) ELSE (
- echo config.txt file exists at path location %scriptdir% 
-)
- 
-
-for /f "delims=" %%x in (%scriptdir%config.txt) do (set "%%x")
-
-setlocal enabledelayedexpansion 
-
-set SEED_DIRECTORY=%USERPROFILE%\%INSTALL_DIR%
-
-
-
-:PowerShell
-SET PSScript=%temp%\~tmpDlFile.ps1
-IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
-ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
-ECHO Invoke-WebRequest "https://github.com/waterjugs/SYN-Seed-Script/archive/refs/heads/main.zip" -OutFile "main.zip">>"%PSScript%"
-
-Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
-
-tar -xf main.zip
-
-xcopy /s /e /y "%SEED_DIRECTORY%\SYN-Seed-Script-main" "%SEED_DIRECTORY%\"
-echo.
-echo Directory copied.
-
 @echo off
 for /f "delims=" %%x in (config.txt) do (set "%%x")
 echo Checking to see if HLL is running...
@@ -195,7 +153,7 @@ for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLROTN% ^| %JQ_PATH% -
 IF NOT DEFINED axiscountROTN goto ServerDownROTN
 IF DEFINED axiscountROTN goto ServerUpROTN
 :ServerDownROTN
-echo The "=ROTN= OnlyToes" Server is Down. Skipping to the "Syndicate US - Level 50" server.
+echo The "=ROTN= OnlyToes" Server is Down. Skipping to the "Spawn Simulator | Syndicate" server.
 goto EXILEDSEED
 :ServerUpROTN
 echo.Allied Faction has %alliedcountROTN% players
@@ -255,8 +213,8 @@ echo Waiting for HLL to Close.
 timeout /t 60 >nul
 
 :SYNSEED
-echo The "Ctrl Alt Defeat[Hellfire" Server is seeded. Onto the "Syndicate US - Level 50" server
-echo Launching "Syndicate US - Level 50" Seed...
+echo The "Ctrl Alt Defeat[Hellfire" Server is seeded. Onto the "Spawn Simulator | Syndicate" server
+echo Launching "Spawn Simulator | Syndicate" Seed...
 echo.
 echo Checking Player counts ..
 
@@ -266,7 +224,7 @@ for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r
 IF NOT DEFINED axiscountSYN goto ServerDownSYN
 IF DEFINED axiscountSYN goto ServerUpSYN
 :ServerDownSYN
-echo The "Syndicate US - Level 50" Server is Down. Skipping to end of seeding.
+echo The "Spawn Simulator | Syndicate" Server is Down. Skipping to end of seeding.
 goto endFINAL
 :ServerUpSYN
 echo.Allied Faction has %alliedcountSYN% players
@@ -279,12 +237,12 @@ goto endFINAL
 
 if %alliedcountSYN% leq %axiscountSYN% (
 echo Launching as Allies. Time to Launch 4.5 Minutes.
-Seeder.exe Allied "Syndicate US - Level 50" %LAUNCHER% SpawnSL
+Seeder.exe Allied "Spawn Simulator | Syndicate" %LAUNCHER% SpawnSL
 timeout /t 10 >nul
 goto SYNloop
 ) else (
 echo Launching as Axis. Time to Launch 4.5 Minutes.
-Seeder.exe Axis "Syndicate US - Level 50" %LAUNCHER% SpawnSL
+Seeder.exe Axis "Spawn Simulator | Syndicate" %LAUNCHER% SpawnSL
 timeout /t 10 >nul
 
 goto SYNloop
@@ -297,25 +255,25 @@ for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountSYN=%%i
 
 if %countSYN% gtr %SEEDED_THRESHOLD% (
-    echo "Syndicate US - Level 50" Player count is greater than %SEEDED_THRESHOLD%.
+    echo "Spawn Simulator | Syndicate" Player count is greater than %SEEDED_THRESHOLD%.
     goto endFINAL
 ) else (
-    echo "Syndicate US - Level 50" Player count is %countSYN%. Waiting 30 seconds...
+    echo "Spawn Simulator | Syndicate" Player count is %countSYN%. Waiting 30 seconds...
 	echo Timeleft: %timeSYN%
 	if %timeSYN% geq 5280 (
 	echo New Map.
 		if %alliedcountSYN% leq %axiscountSYN% (
 		echo Spawning
-		Seeder.exe Allied "Syndicate US - Level 50" %LAUNCHER% ReSpawnSL
+		Seeder.exe Allied "Spawn Simulator | Syndicate" %LAUNCHER% ReSpawnSL
 		) else (
 		echo Spawning
-		Seeder.exe Axis "Syndicate US - Level 50" %LAUNCHER% ReSpawnSL
+		Seeder.exe Axis "Spawn Simulator | Syndicate" %LAUNCHER% ReSpawnSL
 		)
 	timeout /t 120 >nul
 	goto SYNloop
 	) else (
     timeout /t 30 >nul
-	Seeder.exe Allied "Syndicate US - Level 50" %LAUNCHER% AFK
+	Seeder.exe Allied "Spawn Simulator | Syndicate" %LAUNCHER% AFK
     goto SYNloop
 )
 )
@@ -323,7 +281,7 @@ if %countSYN% gtr %SEEDED_THRESHOLD% (
 :endFINAL
 echo All servers have been seeded! Thank you for contributing.
 timeout /t 30 >nul
-Seeder.exe Allied "Syndicate US - Level 50" %LAUNCHER% AltF4
+Seeder.exe Allied "Spawn Simulator | Syndicate" %LAUNCHER% AltF4
 echo Waiting for HLL to Close.
 timeout /t 60 >nul
 
