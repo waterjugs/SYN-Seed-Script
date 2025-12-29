@@ -9,9 +9,10 @@ SEEDED_THRESHOLD=80
 RCON_URLCTRL=http://45.59.162.147:8010/api/get_public_info
 RCON_URLSYN=https://syn-stats.hlladmin.com//api/get_public_info
 RCON_URLROTN=https://rotn-stats.crcon.cc/api/get_public_info
-RCON_URLEXILED=https://exiles-stats.hlladmin.com/api/get_public_info
+RCON_URLEXILED=http://45.59.162.147:7014/api/get_public_info
 
 LAUNCHER=Steam
+
 
 
 
