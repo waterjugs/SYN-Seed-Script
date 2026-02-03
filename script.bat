@@ -53,15 +53,15 @@ for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -
 IF NOT DEFINED axiscountCTRL goto ServerDownCTRL
 IF DEFINED axiscountCTRL goto ServerUpCTRL
 :ServerDownCTRL
-echo The "Ctrl Alt Defeat[Hellfire" Server is Down. Skipping to the "Exiled" server.
-goto EXILEDSEED
+echo The "Ctrl Alt Defeat[Hellfire" Server is Down. Skipping to the "SWEATS AND SYNNERS | Syndicate" server.
+goto SYNSEED
 :ServerUpCTRL
 echo.Allied Faction has %alliedcountCTRL% players
 echo.Axis Faction has %axiscountCTRL% players
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count"`) do set countCTRL=%%i
 echo.Player Count %countCTRL%
 If %countCTRL% gtr %SEEDED_THRESHOLD% (
-goto EXILEDSEED
+goto SYNSEED
 )
 
 if %alliedcountCTRL% leq %axiscountCTRL% (
@@ -114,144 +114,6 @@ Seeder.exe Allied "Ctrl Alt Defeat[Hellfire" %LAUNCHER% AltF4
 echo Waiting for HLL to Close.
 timeout /t 60 >nul
 
-:EXILEDSEED
-echo The "Ctrl Alt Defeat[Hellfire" Server is seeded. Onto the "Exiled" server.
-echo Launching "Exiled" Seed...
-echo.
-echo Checking Player counts ..
-
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLEXILED% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountEXILED=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLEXILED% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountEXILED=%%i
-
-IF NOT DEFINED axiscountEXILED goto ServerDownEXILED
-IF DEFINED axiscountEXILED goto ServerUpEXILED
-:ServerDownEXILED
-echo The "Exiled" Server is Down. Skipping to the "=ROTN= OnlyToes" server.
-goto ROTNSEED
-:ServerUpEXILED
-echo.Allied Faction has %alliedcountEXILED% players
-echo.Axis Faction has %axiscountEXILED% players
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLEXILED% ^| %JQ_PATH% -r ".result.player_count"`) do set countEXILED=%%i
-echo.Player Count %countEXILED%
-If %countEXILED% gtr %SEEDED_THRESHOLD% (
-goto ROTNSEED
-)
-
-if %alliedcountEXILED% leq %axiscountEXILED% (
-echo Launching as Allies. Time to Launch 4.5 Minutes.
-Seeder.exe Allied "Exiled" %LAUNCHER% SpawnSL
-timeout /t 10 >nul
-goto EXILEDloop
-) else (
-echo Launching as Axis. Time to Launch 4.5 Minutes.
-Seeder.exe Axis "Exiled" %LAUNCHER% SpawnSL
-timeout /t 10 >nul
-
-goto EXILEDloop
-)
-
-:EXILEDloop
-
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLEXILED% ^| %JQ_PATH% -r ".result.player_count"`) do set countEXILED=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLEXILED% ^| %JQ_PATH% -r ".result.time_remaining"`) do set timeEXILED=%%i
-for /f "tokens=1,2 delims=." %%a  in ("%timeEXILED%") do (set timeEXILED=%%a)
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLEXILED% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountEXILED=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLEXILED% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountEXILED=%%i
-
-if %countEXILED% gtr %SEEDED_THRESHOLD% (
-    echo "Exiled" Player count is greater than %SEEDED_THRESHOLD%.
-    goto ROTNSEED
-) else (
-    echo "Exiled" Player count is %countEXILED%. Waiting 30 seconds...
-	echo Timeleft: %timeEXILED%
-	if %timeEXILED% geq 5280 (
-	echo New Map.
-		if %alliedcountEXILED% leq %axiscountEXILED% (
-		echo Spawning
-		Seeder.exe Allied "Exiled" %LAUNCHER% ReSpawnSL
-		) else (
-		echo Spawning
-		Seeder.exe Axis "Exiled" %LAUNCHER% ReSpawnSL
-		)
-	timeout /t 120 >nul
-	goto EXILEDloop
-	) else (
-    timeout /t 30 >nul
-	Seeder.exe Allied "Exiled" %LAUNCHER% AFK
-    goto EXILEDloop
-)
-)
-
-:ROTNSEED
-echo The "Exiled" Server is seeded. Onto the "=ROTN= OnlyToes" server
-echo Launching "=ROTN= OnlyToes" Seed...
-echo.
-echo Checking Player counts ..
-
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLROTN% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountROTN=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLROTN% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountROTN=%%i
-
-IF NOT DEFINED axiscountROTN goto ServerDownROTN
-IF DEFINED axiscountROTN goto ServerUpROTN
-:ServerDownROTN
-echo The "=ROTN= OnlyToes" Server is Down. Skipping to the "SWEATS AND SYNNERS | Syndicate" server.
-goto EXILEDSEED
-:ServerUpROTN
-echo.Allied Faction has %alliedcountROTN% players
-echo.Axis Faction has %axiscountROTN% players
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLROTN% ^| %JQ_PATH% -r ".result.player_count"`) do set countROTN=%%i
-echo.Player Count %countROTN%
-If %countROTN% gtr %SEEDED_THRESHOLD% (
-goto endROTN
-)
-
-if %alliedcountROTN% leq %axiscountROTN% (
-echo Launching as Allies. Time to Launch 4.5 Minutes.
-Seeder.exe Allied "=ROTN= OnlyToes" %LAUNCHER% SpawnSL
-timeout /t 10 >nul
-goto ROTNloop
-) else (
-echo Launching as Axis. Time to Launch 4.5 Minutes.
-Seeder.exe Axis "=ROTN= OnlyToes" %LAUNCHER% SpawnSL
-timeout /t 10 >nul
-
-goto ROTNloop
-)
-:ROTNloop
-
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLROTN% ^| %JQ_PATH% -r ".result.player_count"`) do set countROTN=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLROTN% ^| %JQ_PATH% -r ".result.time_remaining"`) do set timeROTN=%%i
-for /f "tokens=1,2 delims=." %%a  in ("%timeROTN%") do (set timeROTN=%%a)
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLROTN% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountROTN=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLROTN% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountROTN=%%i
-
-if %countROTN% gtr %SEEDED_THRESHOLD% (
-    echo "=ROTN= OnlyToes" Player count is greater than %SEEDED_THRESHOLD%.
-    goto EXILEDSEED
-) else (
-    echo "=ROTN= OnlyToes" Player count is %countROTN%. Waiting 30 seconds...
-	echo Timeleft: %timeROTN%
-	if %timeROTN% geq 10680 (
-	echo New Map.
-		if %alliedcountROTN% leq %axiscountROTN% (
-		echo Spawning
-		Seeder.exe Allied "=ROTN= OnlyToes" %LAUNCHER% ReSpawnSL
-		) else (
-		echo Spawning
-		Seeder.exe Axis "=ROTN= OnlyToes" %LAUNCHER% ReSpawnSL
-		)
-	timeout /t 120 >nul
-	goto ROTNloop
-	) else (
-    timeout /t 30 >nul
-	Seeder.exe Allied "=ROTN= OnlyToes" %LAUNCHER% AFK
-    goto ROTNloop
-)
-)
-:endROTN
-Seeder.exe Allied "=ROTN= OnlyToes" %LAUNCHER% AltF4
-echo Waiting for HLL to Close.
-timeout /t 60 >nul
 
 :SYNSEED
 echo The "Ctrl Alt Defeat[Hellfire" Server is seeded. Onto the "SWEATS AND SYNNERS | Syndicate" server
