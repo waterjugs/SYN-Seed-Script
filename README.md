@@ -11,10 +11,15 @@
    - jq utility will be downloaded automatically
    - Scheduled task will be created automatically
 
-4. **Configure if needed:**
+4. **Run The Script**
+   - Goto `%USERPROFILE%\hll-seq-seed`
+   - Double-click `script.bat`
+
+6. **Configure if needed:**
    - Edit `%USERPROFILE%\hll-seq-seed\config.txt` if using Epic Games launcher
    - Change `LAUNCHER=Steam` to `LAUNCHER=epic`
 
-5. **Uninstall if needed:**
+7. **Uninstall if needed:**
    - **Easy way:** Double-click `uninstaller.bat` 
+
 
